@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+  Gabarit du manifeste de mise a jour.
+  Remplacer IDENTIFIANT_EXTENSION par l'identifiant obtenu a l'empaquetage,
+  et l'adresse du codebase par celle du fichier .crx heberge en HTTPS.
+-->
+<gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
+  <app appid='IDENTIFIANT_EXTENSION'>
+    <updatecheck codebase='https://exemple.onrender.com/novablock.crx' version='1.0.0' />
+  </app>
+</gupdate>
