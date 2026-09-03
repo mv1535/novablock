@@ -5,7 +5,7 @@
   et l'adresse du codebase par celle du fichier .crx heberge en HTTPS.
 -->
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
-  <app appid=kjjdbnfklgdihkcoolepibmhgaiambpk>
+    <app appid='kjjdbnfklgdihkcoolepibmhgaiambpk'>
     <updatecheck codebase='https://novablock.onrender.com/novablock.crx' version='1.0.0' />
   </app>
 </gupdate>
