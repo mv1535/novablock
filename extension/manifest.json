@@ -24,7 +24,8 @@
       "matches": [
         "*://*.youtube.com/*",
         "*://*.facebook.com/*",
-        "*://*.instagram.com/*"
+        "*://*.instagram.com/*",
+        "*://fb.watch/*"
       ],
       "js": [
         "url-rules.js",
