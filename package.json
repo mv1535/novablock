@@ -1,0 +1,9 @@
+{
+  "name": "novablock",
+  "private": true,
+  "version": "1.1.0",
+  "scripts": {
+    "test": "node --test tests/*.test.js && bash scripts/test-android-detector.sh",
+    "check": "bash scripts/check.sh"
+  }
+}
