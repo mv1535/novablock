@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Novablock</title>
+    <link rel="stylesheet" href="ui.css" />
+    <link rel="stylesheet" href="block.css" />
+  </head>
+  <body>
+    <main class="mur">
+      <header class="entete">
+        <p class="etiquette mono" id="etiquette">Format court</p>
+        <h1 id="titre">Bloqué.</h1>
+        <p class="doux" id="soustitre">
+          Pour obtenir quinze minutes d'accès, maintenez le bouton enfoncé pendant deux minutes
+          sans relâcher.
+        </p>
+      </header>
+
+      <section class="sortie">
+        <button class="bouton-sortie" id="boutonSortie" type="button">
+          Revenir en arrière
+        </button>
+        <p class="petit doux" id="sortieDetail"></p>
+      </section>
+
+      <section class="arene" id="arene" aria-live="polite">
+        <button
+          class="cible"
+          id="cible"
+          type="button"
+          aria-describedby="soustitre"
+        >
+          <span class="cible-texte" id="cibleTexte">Maintenir</span>
+          <span class="cible-chrono mono" id="chrono">02:00</span>
+        </button>
+      </section>
+
+      <section class="jauge-bloc">
+        <div class="jauge" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="jauge">
+          <div class="jauge-remplissage" id="jaugeRemplissage"></div>
+        </div>
+        <p class="petit doux" id="etatTexte">Le curseur doit rester sur le bouton, la fenêtre au premier plan.</p>
+      </section>
+
+      <section class="succes" id="succes" hidden>
+        <h2 id="succesTitre">Accès accordé</h2>
+        <p class="doux" id="succesTexte"></p>
+        <div id="succesActions"></div>
+      </section>
+
+      <footer class="pied">
+        <p class="petit doux mono" id="stats"></p>
+        <p class="petit doux">Touchez « Retourner où j'étais » ou appuyez sur Échap</p>
+      </footer>
+    </main>
+    <script src="block.js"></script>
+  </body>
+</html>

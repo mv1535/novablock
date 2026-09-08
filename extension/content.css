@@ -1,0 +1,46 @@
+/* Novablock — masquage des points d'entree.
+   Actif uniquement quand html[data-novablock="on"], donc jamais pendant
+   les 15 minutes accordees. Selecteurs a reviser si les plateformes changent. */
+
+/* Une navigation externe peut charger le lecteur avant l'interface. Le média
+   est rendu invisible dès document_start : aucun son ni image ne fuit. */
+html[data-novablock-page='blocked'] video,
+html[data-novablock-page='blocked'] audio,
+html[data-novablock-page='blocked'] #movie_player,
+html[data-novablock-page='blocked'] ytm-shorts-lockup-view-model {
+  visibility: hidden !important;
+}
+
+/* ---------- YouTube ---------- */
+html[data-novablock='on'] ytd-reel-shelf-renderer,
+html[data-novablock='on'] ytm-reel-shelf-renderer,
+html[data-novablock='on'] ytm-shorts-lockup-view-model,
+html[data-novablock='on'] ytm-shorts-lockup-view-model-v2,
+html[data-novablock='on'] ytd-rich-shelf-renderer[is-shorts],
+html[data-novablock='on'] ytd-reel-item-renderer,
+html[data-novablock='on'] ytd-guide-entry-renderer:has(a[title='Shorts']),
+html[data-novablock='on'] ytd-mini-guide-entry-renderer:has(a[title='Shorts']),
+html[data-novablock='on'] ytd-guide-entry-renderer:has(a[href='/shorts']),
+html[data-novablock='on'] ytd-mini-guide-entry-renderer[aria-label='Shorts'],
+html[data-novablock='on'] grid-shelf-view-model:has(a[href^='/shorts/']),
+html[data-novablock='on'] ytd-rich-section-renderer:has(a[href^='/shorts/']),
+html[data-novablock='on'] ytd-rich-item-renderer:has(a[href^='/shorts/']),
+html[data-novablock='on'] ytd-video-renderer:has(a[href^='/shorts/']),
+html[data-novablock='on'] ytd-compact-video-renderer:has(a[href^='/shorts/']),
+html[data-novablock='on'] a[href^='/shorts/'],
+
+/* ---------- Instagram ---------- */
+html[data-novablock='on'] a[href='/reels/'],
+html[data-novablock='on'] a[href^='/reels/'],
+html[data-novablock='on'] a[href$='/reels/'],
+html[data-novablock='on'] a[href^='/reel/'],
+html[data-novablock='on'] div[role='tablist'] a[href*='/reels'],
+
+/* ---------- Facebook ---------- */
+html[data-novablock='on'] a[href^='/reel/'],
+html[data-novablock='on'] a[href*='facebook.com/reel/'],
+html[data-novablock='on'] a[aria-label='Reels'],
+html[data-novablock='on'] div[aria-label='Reels'],
+html[data-novablock='on'] a[href*='/watch/reels'] {
+  display: none !important;
+}

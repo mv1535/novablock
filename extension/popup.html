@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Novablock</title>
+    <link rel="stylesheet" href="ui.css" />
+    <style>
+      body { width: min(360px, 100vw); min-width: 300px; padding: 1.25rem; }
+      .entete-popup { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+      .entete-popup h1 { margin: 0; font-size: 1.35rem; }
+      .pastille { display: inline-flex; align-items: center; gap: .45rem; color: #bcd8d3; font-size: .78rem; }
+      .pastille::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-clair); box-shadow: 0 0 0 4px #19848122; }
+      .carte-statut { margin-top: 1.25rem; padding: 1.15rem; border: 1px solid #343a35; border-radius: 14px; background: var(--surface); }
+      .libelle { margin: 0 0 .2rem; color: var(--texte-doux); font-size: .78rem; }
+      .valeur { margin: 0; font-size: 1.55rem; font-weight: 800; letter-spacing: -.02em; }
+      .actions { margin-top: 1rem; display: grid; gap: .6rem; }
+      button { width: 100%; min-height: 48px; border-radius: 10px; font: inherit; font-weight: 700; cursor: pointer; }
+      .primaire { border: 0; background: var(--accent); color: white; }
+      .primaire:hover { background: #209b97; }
+      .secondaire { border: 1px solid #424a43; background: transparent; color: var(--texte); }
+      .secondaire:hover { border-color: var(--accent); background: var(--surface); }
+      .stats { margin-top: 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+      .stat { padding: .7rem; border-radius: 10px; background: #20231f; }
+      .stat span { display: block; }
+      .stat .nombre { margin-top: .15rem; font-size: 1rem; font-weight: 750; }
+      .retrait { display: block; margin-top: 1rem; padding-top: .9rem; border-top: 1px solid #30352f; color: var(--texte-doux); font-size: .78rem; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <header class="entete-popup">
+      <h1>Novablock</h1>
+      <span class="pastille">Protection active</span>
+    </header>
+
+    <section class="carte-statut" aria-live="polite">
+      <p class="libelle">Formats courts</p>
+      <p class="valeur" id="statut">Bloqués</p>
+    </section>
+
+    <div class="actions">
+      <button class="primaire" id="retourApplication" type="button">Retourner à mon application</button>
+      <button class="secondaire" id="demanderAcces" type="button">Débloquer 15 minutes</button>
+    </div>
+
+    <section class="stats" aria-label="Statistiques">
+      <div class="stat"><span class="petit doux">Blocages</span><span class="nombre mono" id="blocages">0</span></div>
+      <div class="stat"><span class="petit doux">Accès temporaires</span><span class="nombre mono" id="deblocages">0</span></div>
+    </section>
+
+    <a class="retrait" id="lienDesinstallation" href="#">Désinstallation et informations</a>
+    <script src="url-rules.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

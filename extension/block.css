@@ -1,0 +1,191 @@
+.mur {
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: max(var(--esp-8), env(safe-area-inset-top))
+    max(var(--esp-3), env(safe-area-inset-right))
+    max(var(--esp-4), env(safe-area-inset-bottom))
+    max(var(--esp-3), env(safe-area-inset-left));
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-4);
+}
+
+.entete {
+  max-width: 62ch;
+}
+
+.etiquette {
+  display: inline-block;
+  margin: 0 0 var(--esp-2);
+  padding: 4px 10px;
+  border: 1px solid var(--accent);
+  border-radius: var(--rayon-s);
+  color: var(--accent-clair);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* --- Arene : la cible derive lentement, il faut la suivre --- */
+.arene {
+  position: relative;
+  height: 340px;
+  border: 1px dashed #3d423b;
+  border-radius: var(--rayon-m);
+  background: radial-gradient(circle at 50% 50%, #23272200 0%, #1a1c19 100%);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.cible {
+  width: 190px;
+  height: 190px;
+  border-radius: var(--rayon-l);
+  border: 2px solid var(--accent);
+  background: var(--surface-haute);
+  color: var(--texte);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  gap: 6px;
+  user-select: none;
+  touch-action: none;
+  will-change: transform;
+  transition: background 180ms var(--courbe), border-color 180ms var(--courbe);
+}
+
+.cible:hover {
+  border-color: var(--accent-clair);
+}
+
+.cible.actif {
+  background: var(--accent);
+  border-color: var(--accent-clair);
+}
+
+.cible-texte {
+  font-size: var(--texte-lg);
+}
+
+.cible-chrono {
+  font-size: var(--texte-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* --- Jauge --- */
+.jauge {
+  height: 10px;
+  border-radius: var(--rayon-l);
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.jauge-remplissage {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: var(--rayon-l);
+}
+
+.jauge-bloc p {
+  margin-top: var(--esp-1);
+}
+
+/* --- Succes --- */
+.succes {
+  padding: var(--esp-3);
+  border: 1px solid var(--olive);
+  border-left-width: 4px;
+  border-radius: var(--rayon-s);
+  background: var(--surface);
+}
+
+.succes .procedure {
+  background: #141613;
+  border-radius: var(--rayon-s);
+  padding: var(--esp-2);
+  font-size: var(--texte-sm);
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.pied {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-2);
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #2d312c;
+  padding-top: var(--esp-2);
+}
+
+.pied p {
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .mur {
+    padding: max(var(--esp-3), env(safe-area-inset-top))
+      max(var(--esp-2), env(safe-area-inset-right))
+      max(var(--esp-2), env(safe-area-inset-bottom))
+      max(var(--esp-2), env(safe-area-inset-left));
+    gap: var(--esp-3);
+  }
+  .arene {
+    height: clamp(250px, 42dvh, 340px);
+  }
+  .cible {
+    width: 164px;
+    height: 164px;
+  }
+}
+
+@media (max-height: 640px) and (orientation: landscape) {
+  .mur { padding-top: var(--esp-2); }
+  .arene { height: 210px; }
+  .cible { width: 138px; height: 138px; }
+  .pied { display: none; }
+}
+
+@media (pointer: coarse) {
+  .bouton-sortie { min-height: 52px; }
+  .cible { -webkit-tap-highlight-color: transparent; }
+}
+
+/* --- Sortie : quitter le mur sans rien maintenir --- */
+.sortie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--esp-2);
+}
+
+.bouton-sortie {
+  min-height: 48px;
+  padding: var(--esp-1) var(--esp-3);
+  border: 1px solid var(--accent);
+  border-radius: var(--rayon-s);
+  background: var(--surface);
+  color: var(--texte);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 180ms var(--courbe), border-color 180ms var(--courbe);
+}
+
+.bouton-sortie:hover {
+  background: var(--surface-haute);
+  border-color: var(--accent-clair);
+}
+
+.sortie p {
+  margin: 0;
+}
