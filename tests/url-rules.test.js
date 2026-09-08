@@ -48,6 +48,7 @@ test('le manifeste charge les règles avant le script de contenu', () => {
   const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
   assert.equal(manifest.version, '1.1.0');
   assert.deepEqual(manifest.content_scripts[0].js, ['url-rules.js', 'content.js']);
+  assert.equal(manifest.content_scripts[0].matches.includes('*://fb.watch/*'), true);
 
   const referencedFiles = [
     manifest.background.service_worker,
