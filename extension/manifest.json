@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Novablock",
+  "version": "1.1.0",
+  "description": "Bloque les formats courts sans faire perdre la page, le défilement ou l'application en cours.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAscReboUNtra4rB7zDVrZfkaacs4A10Hfgcl4tTTjuwfyBOP91yC93v5RR11Nh/6unIAkOrfsnKirVuu20InPbuh/7zPhPuEaBvJVjrklGlu3wUdZKvNCYh6p21QQUvttIqptCE7xzYQ2beIxTAwWPS/wYQ7VxM9WkPLdkLJi+03LShu6F9GvNyM39pGGJqxr5XDj9EJoUqwRQntBApvq85ym6f15aD1qBqeV/NCSBrcdZo4Mf8Eh7Aif/bgaUSm8T9tIdE889/i/hoiz7C4Y8WMjw8A/Hwi1C5AfIU8DvOWtZ7D4G9Bw6NTU3dv/WfjXMQ+JtW07n5swJWif2calUQIDAQAB",
+  "permissions": [
+    "storage",
+    "tabs",
+    "alarms",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.facebook.com/*",
+    "*://*.instagram.com/*",
+    "*://fb.watch/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.facebook.com/*",
+        "*://*.instagram.com/*"
+      ],
+      "js": [
+        "url-rules.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Novablock"
+  }
+}
