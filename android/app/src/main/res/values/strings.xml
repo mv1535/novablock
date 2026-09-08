@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Novablock</string>
+    <string name="service_name">Protection contre les Shorts</string>
+    <string name="service_description">Détecte uniquement le lecteur Shorts de YouTube, revient à l’écran précédent et n’enregistre aucun contenu.</string>
+    <string name="eyebrow">PROTECTION ANDROID</string>
+    <string name="main_title">Les Shorts s’arrêtent ici.</string>
+    <string name="main_description">Novablock vous ramène automatiquement à l’endroit exact où vous étiez. Aucun nouvel écran ne reste dans l’historique.</string>
+    <string name="status_enabled">Protection active</string>
+    <string name="status_disabled">Protection inactive</string>
+    <string name="enable_service">Activer dans Accessibilité</string>
+    <string name="manage_service">Gérer la protection</string>
+    <string name="privacy_title">Simple et privé</string>
+    <string name="privacy_body">Le service lit seulement la structure visible de YouTube pour reconnaître Shorts. Rien n’est transmis ni conservé.</string>
+    <string name="blocked_title">Short bloqué</string>
+    <string name="blocked_body">Vous êtes déjà revenu où vous étiez.</string>
+    <string name="blocked_action">Touchez pour reprendre maintenant</string>
+    <string name="blocked_auto">Cette vue disparaît automatiquement.</string>
+</resources>
