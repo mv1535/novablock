@@ -1,0 +1,126 @@
+/* Novablock — systeme de style commun.
+   Jetons d'abord, composants ensuite. Palette Novatik, direction sobre. */
+
+:root {
+  /* Couleurs — un role par valeur */
+  --fond: #1c1e1b;
+  --surface: #242723;
+  --surface-haute: #2d312c;
+  --texte: #e9e8e7;
+  --texte-doux: #a8ada4;
+  --accent: #198481;
+  --accent-clair: #35b2ae;
+  --alerte: #be4646;
+  --olive: #89a13f;
+
+  /* Typographie — echelle modulaire, pas de 1.25 */
+  --pas: 1.25;
+  --texte-base: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
+  --texte-sm: calc(var(--texte-base) / var(--pas));
+  --texte-lg: calc(var(--texte-base) * var(--pas));
+  --texte-xl: calc(var(--texte-lg) * var(--pas));
+  --texte-2xl: calc(var(--texte-xl) * var(--pas));
+  --texte-3xl: calc(var(--texte-2xl) * var(--pas));
+
+  /* Espacement — base 8 px */
+  --esp-1: 0.5rem;
+  --esp-2: 1rem;
+  --esp-3: 1.5rem;
+  --esp-4: 2rem;
+  --esp-6: 3rem;
+  --esp-8: 4rem;
+  --esp-12: 6rem;
+
+  --rayon-s: 6px;
+  --rayon-m: 14px;
+  --rayon-l: 999px;
+  --courbe: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--fond);
+  color: var(--texte);
+  font-family: 'Montserrat', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: var(--texte-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: var(--texte-3xl);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--esp-2);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: var(--texte-lg);
+  margin: 0 0 var(--esp-1);
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 var(--esp-2);
+  max-width: 60ch;
+}
+
+.doux {
+  color: var(--texte-doux);
+}
+
+.petit {
+  font-size: var(--texte-sm);
+}
+
+.mono {
+  font-family: 'Cascadia Mono', Consolas, ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+a {
+  color: var(--accent-clair);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-clair);
+  outline-offset: 2px;
+}
+
+/* --- Bouton secondaire --- */
+.bouton-lien {
+  display: inline-block;
+  min-height: 44px;
+  padding: var(--esp-1) var(--esp-3);
+  border: 1px solid #3d423b;
+  border-radius: var(--rayon-s);
+  background: transparent;
+  color: var(--texte-doux);
+  font: inherit;
+  font-size: var(--texte-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 180ms var(--courbe), color 180ms var(--courbe);
+}
+
+.bouton-lien:hover {
+  border-color: var(--accent);
+  color: var(--texte);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+}
