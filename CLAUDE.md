@@ -124,10 +124,12 @@ gradle -p android assembleDebug        # l'APK compile
 La CI fait les deux chaînes : `npm run check` et l'empaquetage de l'extension
 d'un côté, `gradle -p android test lint assembleDebug` de l'autre.
 
-**La CI ne protège rien en ce moment** : le quota GitHub Actions du compte est
-épuisé, et les contrôles échouent en quelques secondes sans rien exécuter. Les
-commandes locales sont donc la seule vérification réelle — les lancer avant de
-pousser, et dire lesquelles ont tourné.
+**Lancer ces commandes localement avant de pousser**, et dire lesquelles ont
+tourné. La CI d'ici est réelle et refait les deux chaînes — mais elle les
+refait *après*, et la chaîne Gradle coûte plusieurs minutes. Le quota GitHub
+Actions du compte s'est par ailleurs déjà épuisé une fois en cours de mois :
+un contrôle qui tombe en quelques secondes sans rien exécuter, c'est ce quota,
+pas le code.
 
 ---
 
